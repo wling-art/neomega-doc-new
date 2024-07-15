@@ -1,0 +1,175 @@
+import { defineConfig } from "vitepress";
+import pkg from "../../package.json";
+// https://vitepress.dev/reference/site-config
+export default defineConfig({
+  lastUpdated: true,
+  lang: "zh-CN",
+  title: "NeOmega",
+  description: "NeOmega 文档",
+  ignoreDeadLinks: true,
+  cleanUrls: true,
+  head: [
+    ["link", { rel: "icon", href: "/logo.png" }],
+    ["script", { async: "", src: "/m.js" }],
+    ["script", { async: "true", src: "/cursor.js" }],
+  ],
+
+  sitemap: {
+    hostname: "https://neomega-wiki.tblstudio.cn",
+  },
+  themeConfig: {
+    search: {
+      provider: "local",
+      options: {
+        _render(src, env, md) {
+          const html = md.render(src, env);
+          if (env.frontmatter?.search === false) {
+            return "";
+          }
+          return html;
+        },
+      },
+    },
+    // https://vitepress.dev/reference/default-theme-config
+    // logo: { src: "/logo.png", width: 23, height: 15 },
+    editLink: {
+      pattern:
+        "https://github.com/wling-art/neomega-doc-new/tree/main/docs/:path",
+    },
+    nav: [
+      { text: "主界面", link: "/" },
+      { text: "百科", link: "/wiki/introl" },
+      {
+        text: "API 参考",
+        link: "/API_list/introl",
+      },
+      {
+        text: "关于",
+        items: [{ text: "关于本 Wiki", link: "/about/intro" }],
+      },
+    ],
+
+    sidebar: {
+      "/wiki": [
+        { text: "👋 欢迎来到 NeOmega Wiki", link: "/wiki/introl" },
+        { text: "📘 项目介绍", link: "/wiki/jieshao" },
+        { text: "🌹 FAQ", link: "/wiki/FAQ" },
+        {
+          text: "📖 使用教程",
+          items: [
+            {
+              text: "🔨 下载，安装！",
+              link: "/wiki/learn_use/install",
+            },
+            { text: "🛹 NeOmega 启动！", link: "/wiki/learn_use/use" },
+          ],
+        },
+        {
+          text: "✨ NeOmega 插件开发",
+          items: [{ text: "🔧 60 分钟闪电战", link: "/wiki/learn_dev/60_min" }],
+        },
+      ],
+      "/API_list": [
+        {
+          text: "📦 Coromega API 列表",
+          link: "/API_list/introl",
+          items: [
+            {
+              text: "命令收发",
+              link: "/API_list/命令收发api/coromega_cmd",
+            },
+            {
+              text: "机器人",
+              link: "/API_list/机器人和服务器信息/coromega_botUq",
+            },
+            {
+              text: "系统功能",
+              link: "/API_list/system/coromega_system",
+            },
+            {
+              text: "菜单",
+              link: "/API_list/菜单相关API/菜单相关API",
+            },
+            {
+              text: "数据包",
+              link: "/API_list/数据包监听相关API/数据包监听相关API",
+            },
+            {
+              text: "http",
+              link: "/API_list/http相关/http",
+            },
+            {
+              text: "存储",
+              link: "/API_list/存储相关/cocomega_storage",
+            },
+            {
+              text: "cqhttp",
+              link: "/API_list/cqhttp相关API/cqhttp相关API",
+            },
+            {
+              text: "玩家与命令",
+              link: "/API_list/玩家交互与命令方块API/cmd_player",
+            },
+            {
+              text: "建造",
+              link: "/API_list/方块和命令块放置相关/coromega_place_command_block",
+            },
+            {
+              text: "websocket",
+              link: "/API_list/websocket/websocket",
+            },
+            {
+              text: "跨插件通信",
+              link: "/API_list/跨插件api调用/跨插件api调用",
+            },
+            {
+              text: "导入器",
+              link: "/API_list/导入器_strucure_canvas相关API/导入器_strucure_canvas相关API",
+            },
+            {
+              text: "读取配置",
+              link: "/API_list/配置读取和升级相关API/配置读取和升级",
+            },
+            {
+              text: "代码分发保护",
+              link: "/API_list/在分发时保护你的代码/在分发时保护你的代码",
+            },
+          ],
+        },
+      ],
+    },
+
+    socialLinks: [
+      { icon: "github", link: "https://github.com/OmineDev/neomega-core" },
+    ],
+    externalLinkIcon: true, // 展示站外链接箭头 ↗
+    footer: {
+      message: `基于 GPL-3.0 license 许可发布 | 文档版本 ${pkg.version}`,
+      copyright: `版权所有 © 2023-${new Date().getFullYear()} NeOmega`,
+    },
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
+    },
+    langMenuLabel: "多语言",
+    returnToTopLabel: "回到顶部",
+    sidebarMenuLabel: "菜单",
+    darkModeSwitchLabel: "主题",
+    lightModeSwitchTitle: "切换到浅色模式",
+    darkModeSwitchTitle: "切换到深色模式",
+  },
+  markdown: {
+    lineNumbers: true,
+    image: {
+      // 图片懒加载
+      lazyLoading: true,
+    },
+    container: {
+      tipLabel: "提示",
+      warningLabel: "警告",
+      dangerLabel: "危险",
+      infoLabel: "信息",
+      detailsLabel: "详细信息",
+    },
+  },
+});

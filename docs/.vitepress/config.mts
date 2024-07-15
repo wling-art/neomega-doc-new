@@ -134,6 +134,10 @@ export default defineConfig({
               text: "代码分发保护",
               link: "/API_list/在分发时保护你的代码/在分发时保护你的代码",
             },
+            {
+              text: "其他",
+              link: "/API_list/其他/common",
+            },
           ],
         },
       ],

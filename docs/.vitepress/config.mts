@@ -100,7 +100,7 @@ export default defineConfig({
             },
             {
               text: "存储",
-              link: "/API_list/存储相关/cocomega_storage",
+              link: "/API_list/存储相关/coromega_storage",
             },
             {
               text: "cqhttp",
@@ -133,6 +133,14 @@ export default defineConfig({
             {
               text: "代码分发保护",
               link: "/API_list/在分发时保护你的代码/在分发时保护你的代码",
+            },
+            {
+              text: "密码 | 哈希 | base64",
+              link: "/API_list/密码_哈希_base64/密码_哈希_base64",
+            },
+            {
+              text: "软API",
+              link: "/API_list/软API/软API",
             },
             {
               text: "其他",

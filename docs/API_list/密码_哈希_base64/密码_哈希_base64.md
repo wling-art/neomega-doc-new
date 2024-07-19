@@ -1,12 +1,8 @@
 # 密码、哈希和 Base64 编码相关 API
 
-基本上，这部分直接使用了 [tengattack/gluacrypto](https://github.com/tengattack/gluacrypto) 提供的库
+这部分 API 主要使用了 [tengattack/gluacrypto](https://github.com/tengattack/gluacrypto) 提供的库。详细信息请参考该库的实现。特别是在加密解密的部分时，需要具备一定的密码学基础。以下是示例演示了各种可用的 API。
 
-详细信息和细节请参考 [tengattack/gluacrypto](https://github.com/tengattack/gluacrypto) 的实现
-
-特别的，涉及到加密解密的部分时，您还需有一定密码学基础
-
-不过，为了方便上手，我们提供了一个示例演示各种可用的 api
+## 示例代码
 
 ```lua
 local omega = require("omega")
@@ -59,9 +55,9 @@ coromega:when_called_by_terminal_menu({
     -- local algorithm="sha256"
     -- local algorithm="sha512"
     local hmac = crypto.hmac(algorithm, after_base64_decoding, key)
-    coromega:print("hamc", hmac)
+    coromega:print("hmac", hmac)
 
-    -- encrypt/decrype
+    -- encrypt/decrypt
     local method = "des-ecb"
     local key = "key12345"
     local iv = "12345678"
@@ -81,10 +77,7 @@ coromega:when_called_by_terminal_menu({
     coromega:print(cipher)
     local message = crypto.decrypt(cipher, method, key, options, iv) -- 解密
     coromega:print(message)
-
-
 end)
 
 coromega:run()
-
 ```

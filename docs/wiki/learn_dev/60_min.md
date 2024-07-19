@@ -1,10 +1,3 @@
----
-lang: zh-CN
-title: 快速入门
-description: 快速入门
-sidebar: auto
----
-
 # 猴子也能学会的插件编写 | 60 分钟闪电战
 
 在本教程中，我们将一同编写一个 "玩家封禁" 插件<br>

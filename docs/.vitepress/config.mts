@@ -137,8 +137,8 @@ export default defineConfig({
               link: "/API_list/配置读取和升级相关API/配置读取和升级",
             },
             {
-              text: "代码分发保护",
-              link: "/API_list/在分发时保护你的代码/在分发时保护你的代码",
+              text: "保护代码在分发时的安全性",
+              link: "/API_list/保护代码在分发时的安全性/保护代码在分发时的安全性",
             },
             {
               text: "密码 | 哈希 | base64",

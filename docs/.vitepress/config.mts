@@ -66,7 +66,13 @@ export default defineConfig({
         },
         {
           text: "✨ NeOmega 插件开发",
-          items: [{ text: "🔧 60 分钟闪电战", link: "/wiki/learn_dev/60_min" }],
+          items: [
+            { text: "🔧 60 分钟闪电战", link: "/wiki/learn_dev/60_min" },
+            {
+              text: "📻 调试 Lua 代码",
+              link: "/wiki/learn_dev/debuglua/debuglua",
+            },
+          ],
         },
       ],
       "/API_list": [

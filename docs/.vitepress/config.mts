@@ -67,7 +67,54 @@ export default defineConfig({
         {
           text: "✨ NeOmega 插件开发",
           items: [
-            { text: "🔧 60 分钟闪电战", link: "/wiki/learn_dev/60_min" },
+            {
+              text: "🔧 60 分钟闪电战",
+              collapsed: true,
+              items: [
+                { text: "教程介绍", link: "/wiki/learn_dev/60_min/introl" },
+                { text: "创建插件", link: "/wiki/learn_dev/60_min/1create" },
+                {
+                  text: "获取玩家输入",
+                  link: "/wiki/learn_dev/60_min/2get_std",
+                },
+                {
+                  text: "处理参数并计算封禁信息",
+                  link: "/wiki/learn_dev/60_min/3solve_time_info",
+                },
+                {
+                  text: "监听玩家在线状态变化",
+                  link: "/wiki/learn_dev/60_min/4listen_change",
+                },
+                { text: "数据库", link: "/wiki/learn_dev/60_min/5db" },
+                {
+                  text: "配置文件优化",
+                  link: "/wiki/learn_dev/60_min/6config_opz",
+                },
+                { text: "终端菜单", link: "/wiki/learn_dev/60_min/7cmd_cd" },
+                { text: "游戏内菜单", link: "/wiki/learn_dev/60_min/8game_cd" },
+                { text: "游戏控制", link: "/wiki/learn_dev/60_min/9game_ctrl" },
+                { text: "X", link: "/wiki/learn_dev/60_min/10small_bb" },
+                {
+                  text: "第二个游戏存档",
+                  link: "/wiki/learn_dev/60_min/11double_cd",
+                },
+                {
+                  text: "优化玩家输入",
+                  link: "/wiki/learn_dev/60_min/12opz_player_write",
+                },
+                { text: "检查", link: "/wiki/learn_dev/60_min/13checkpoint" },
+                {
+                  text: "使用游戏内命令快",
+                  link: "/wiki/learn_dev/60_min/14use_cb",
+                },
+                { text: "开放 API", link: "/wiki/learn_dev/60_min/15open_api" },
+                {
+                  text: "QQ 操作",
+                  link: "/wiki/learn_dev/60_min/16qq_ban_unban",
+                },
+                { text: "最后", link: "/wiki/learn_dev/60_min/last_say" },
+              ],
+            },
             {
               text: "📻 调试 Lua 代码",
               link: "/wiki/learn_dev/debuglua/debuglua",

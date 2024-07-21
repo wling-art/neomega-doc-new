@@ -167,6 +167,11 @@ export default defineConfig({
               text: "建造",
               link: "/API_list/方块和命令块放置相关/coromega_place_command_block",
             },
+
+            {
+              text: "Bot Action",
+              link: "/API_list/botAction/botAction",
+            },
             {
               text: "websocket",
               link: "/API_list/websocket/websocket",

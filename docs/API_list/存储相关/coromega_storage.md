@@ -278,29 +278,30 @@ local data = coromega:load_data(coromega:data_path_of("test.json"))
 > 以下均为 `db` 对象的方法
 > 注意： `neomega` 使用的是键值对数据库，即 `key:value` 的形式，`key` 和 `value` 都是字符串。
 
-## 打开或创建一个 键-值 数据库
+## 打开或创建一个 键 - 值 数据库
 
 ### `key_value_db(path,db_type)`
-  - **范围**: 任意
-  - **说明**: 根据 path 路径的数据库文件创建一个 `key_value_db` 对象<br>
-    也就是 db 对象 如果不含有该文件 则自动创建 然后返回 db 对象
-    数据库类型可以为以下三种之一:  
-    1. "","text_log" 默认的实现   
-       折中的实现，不会因为意外关闭导致数据库完全损坏，而且也是以可读方式存在的   
-       手动修改数据库文件的时候需要先改log文件，log 文件内容必须遵循特定规则   
-       每次启动时都会把数据保存内存中，因此正式使用时只有少量数据时适合使用这个数据   
-    2. "level"  
-       leveldb, 显然是最好的实现，然而，内部数据都是以二进制存储，无法阅读   
-       leveldb 的 file lock 被移除，因此需要用其他手段保证不会同时写一个文件   
-       适合在正式使用时使用   
-    3. "json"   
-       最慢的最不安全的实现，每次启动时都会把数据保存内存中，当数据变更时更新 json 文件    
-       若在保存的时候程序被关闭，可能导致数据库完全损坏   
-       好处是内容便于阅读和修改，只建议在开发和调试时使用   
-  - **参数**:
-    - `path`: 数据库的路径
-    - `db_type`: 数据库类型: 应该为 "","text_log","level","json" 之一或空(等效于 "text_log")
-  - **返回值**：返回一个 `key_value_db` 对象
+
+- **范围**: 任意
+- **说明**: 根据 path 路径的数据库文件创建一个 `key_value_db` 对象<br>
+  也就是 db 对象 如果不含有该文件 则自动创建 然后返回 db 对象
+  数据库类型可以为以下三种之一：
+  1. "","text_log" 默认的实现
+     折中的实现，不会因为意外关闭导致数据库完全损坏，而且也是以可读方式存在的
+     手动修改数据库文件的时候需要先改 log 文件，log 文件内容必须遵循特定规则
+     每次启动时都会把数据保存内存中，因此正式使用时只有少量数据时适合使用这个数据
+  2. "level"
+     leveldb, 显然是最好的实现，然而，内部数据都是以二进制存储，无法阅读
+     leveldb 的 file lock 被移除，因此需要用其他手段保证不会同时写一个文件
+     适合在正式使用时使用
+  3. "json"
+     最慢的最不安全的实现，每次启动时都会把数据保存内存中，当数据变更时更新 json 文件
+     若在保存的时候程序被关闭，可能导致数据库完全损坏
+     好处是内容便于阅读和修改，只建议在开发和调试时使用
+- **参数**:
+  - `path`: 数据库的路径
+  - `db_type`: 数据库类型：应该为 "","text_log","level","json" 之一或空 (等效于 "text_log")
+- **返回值**：返回一个 `key_value_db` 对象
 
 **示例**:
 
@@ -310,7 +311,6 @@ local data = coromega:load_data(coromega:data_path_of("test.json"))
   local json_db=coromega:key_value_db("json_db","json")
   local level_db=coromega:key_value_db("level_db","level")
 ```
-
 
 ## 获取数据对象
 
@@ -390,28 +390,28 @@ end)
 ## 迁移数据库
 
 ### `migrate_to(new_db)`
-  - **范围**: 任意
-  - **说明**: 将现有数据库内容迁移到一个新的数据库中
-  - **参数**:
-    - `new_db`: 新的数据库
-  - **返回值**: 无
-  
+
+- **范围**: 任意
+- **说明**: 将现有数据库内容迁移到一个新的数据库中
+- **参数**:
+  - `new_db`: 新的数据库
+- **返回值**: 无
+
 **示例**:
 
-``` lua
+```lua
   local src_db=coroemag:key_value_db("src","json")
   local dst_db=coromega:key_value_db("dst","level")
   src_db:migrate_to(target_db)
 ```
 
-
 ## SQL 数据库 (sqlite)
 
-这部分的实现基本就是   
-https://github.com/vadv/gopher-lua-libs/tree/master/db   
-的复制   
+这部分的实现基本就是
+https://github.com/vadv/gopher-lua-libs/tree/master/db
+的复制
 
-但是因为此链接指向的实现因为 build flag 的原因，无法在 linux,macos,android 平台上工作，所以我们拷贝了这个实现并对其进行修改  
+但是因为此链接指向的实现因为 build flag 的原因，无法在 linux,macos,android 平台上工作，所以我们拷贝了这个实现并对其进行修改
 
 你可以访问:
 https://github.com/vadv/gopher-lua-libs/tree/master/db 进一步了解 api 和实现细节，在这里我们仅仅给出一个示例代码

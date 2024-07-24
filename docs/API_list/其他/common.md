@@ -1,32 +1,33 @@
-# 其他
+好的，我会按照之前的风格整理这部分文档。以下是整理后的内容：
 
-## 生成一个 UUID 字符串
+# 其他功能相关 API
+
+## 生成 UUID 字符串
 
 ### `uuid()`
 
-- **范围**: 任意
-- **说明**: 生成一个 UUID 字符串。
-- **参数**: 无
-- **返回**: UUID 字符串
-
-### 示例代码
+- **范围**：任意
+- **说明**：生成一个 UUID 字符串
+- **参数**：无
+- **返回值**：UUID 字符串
+- **示例**：
 
 ```lua
-coromega:print(coromega:uuid())
+local uuid = coromega:uuid()
+coromega:print(uuid)
 ```
 
 ## 翻译
 
-### `translate(input,type)`
+### `translate(input, type)`
 
-- **范围**: 任意
-- **说明**: 翻译特定的 mc 内容为中文
-- **参数**:
-  - input 输入字符串
-  - type 翻译类型 "mc"/ "block"/"item"/"conatiner_data"/"conatiner_slot_data/"item_data"
-- **返回**: 翻译结果，是否成功
-
-### 示例代码
+- **范围**：任意
+- **说明**：将特定的 Minecraft 内容翻译为中文
+- **参数**：
+  - `input` (string)：输入字符串
+  - `type` (string)：翻译类型，可选值为 "mc"、"block"、"item"、"container_data"、"container_slot_data"、"item_data"
+- **返回值**：翻译结果 (string), 是否成功 (boolean)
+- **示例**：
 
 ```lua
   coromega:print(coromega:translate("stone")) -- 石头 true

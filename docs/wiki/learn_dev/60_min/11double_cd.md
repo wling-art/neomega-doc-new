@@ -23,7 +23,7 @@ coromega:when_called_by_game_menu({
     if not ban_info then
         caller:say(("玩家 %s 目前并未被封禁"):format(ban_player_name))
     else
-        coromega:log(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,
+        coromega:log_and_print(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,
             unix_time_to_date_time_str(ban_info.ban_until),
             ban_info.ban_reason))
         caller:say(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,

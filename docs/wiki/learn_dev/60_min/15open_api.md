@@ -22,7 +22,7 @@ coromega:when_called_by_api_named("/player/ban"):start_new(function(args, set_re
     if not ban_reason or ban_reason == "" then
         ban_reason = "未设定"
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
     player_banned_db:set(player_name, {
         ban_until = ban_until,
@@ -46,7 +46,7 @@ coromega:when_called_by_api_named("/player/unban"):start_new(function(args, set_
     if not ban_info then
         set_result(json.encode({ ok = true, detail = ("玩家 %s 目前并未被封禁"):format(player_name) }))
     else
-        coromega:log(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
+        coromega:log_and_print(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
             unix_time_to_date_time_str(ban_info.ban_until),
             ban_info.ban_reason))
         set_result(json.encode({
@@ -102,9 +102,9 @@ coromega:when_called_by_terminal_menu({
     local result = coromega:call_other_plugin_api("/player/ban",
         { player_name = player_name, ban_time = ban_time, ban_reason = ban_reason })
     if result.ok then
-        coromega:log(("调用成功: %s"):format(result.detail))
+        coromega:print(("调用成功: %s"):format(result.detail))
     else
-        coromega:log(("调用失败: %s"):format(result.err))
+        coromega:print(("调用失败: %s"):format(result.err))
     end
 end)
 

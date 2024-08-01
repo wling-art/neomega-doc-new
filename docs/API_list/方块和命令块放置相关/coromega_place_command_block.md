@@ -130,6 +130,6 @@ coromega:when_progress_increased_by_build(
         start_hop = 0,                            -- 开始跃点 (0)
     }
 ):start_new(function(total, current)
-    coromega:log(("progress: %d/%d"):format(total, current))
+    coromega:print(("progress: %d/%d"):format(total, current))
 end)
 ```

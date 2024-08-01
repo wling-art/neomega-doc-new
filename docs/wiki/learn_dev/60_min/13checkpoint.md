@@ -133,7 +133,7 @@ coromega:when_called_by_terminal_menu({
             ban_reason = "未设定"
         end
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
     player_banned_db:set(player_name, {
         ban_until = ban_until,
@@ -165,7 +165,7 @@ coromega:when_called_by_terminal_menu({
     if not ban_info then
         coromega:print(("玩家 %s 目前并未被封禁"):format(player_name))
     else
-        coromega:log(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
+        coromega:log_and_print(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
             unix_time_to_date_time_str(ban_info.ban_until),
             ban_info.ban_reason))
         player_banned_db:delete(player_name)
@@ -214,7 +214,7 @@ coromega:when_called_by_game_menu({
             ban_reason = "未设定"
         end
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
     caller:say(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
@@ -248,7 +248,7 @@ coromega:when_called_by_game_menu({
     if not ban_info then
         caller:say(("玩家 %s 目前并未被封禁"):format(ban_player_name))
     else
-        coromega:log(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,
+        coromega:log_and_print(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,
             unix_time_to_date_time_str(ban_info.ban_until),
             ban_info.ban_reason))
         caller:say(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(ban_player_name,

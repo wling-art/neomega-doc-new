@@ -76,7 +76,7 @@ local players = coromega:get_all_online_players()
 -- 命令块命名为 "扫地机"，指令为 tell 机器人名字 去扫地
 -- 当收到命令块的消息时，执行回调
 coromega:when_receive_msg_from_command_block_named("扫地机"):start_new(function(chat)
-    coromega:log(("command block (%s) chat: %s"):format("扫地机", json.encode(chat)))
+    coromega:log_and_print(("command block (%s) chat: %s"):format("扫地机", json.encode(chat)))
 end)
 ```
 
@@ -96,7 +96,7 @@ end)
 -- 命令块指令为 execute @e[type=snowball] ~ ~ ~ tell 机器人名字 @p[r=3]
 -- 当收到命令块的消息时，执行回调
 coromega:when_receive_msg_from_sender_named("雪球"):start_new(function(chat)
-    coromega:log(("item (%s) chat: %s"):format("雪球", json.encode(chat)))
+    coromega:log_and_print(("item (%s) chat: %s"):format("雪球", json.encode(chat)))
 end)
 ```
 
@@ -112,7 +112,7 @@ end)
 
 ```lua
 coromega:when_chat_msg():start_new(function(chat)
-    coromega:log(("chat sender: %s > %s"):format(chat.name, json.encode(chat)))
+    coromega:log_and_print(("chat sender: %s > %s"):format(chat.name, json.encode(chat)))
 end)
 ```
 
@@ -129,11 +129,11 @@ end)
 ```lua
 coromega:when_player_change():start_new(function(player, action)
     if action == "exist" then
-        coromega:log(("player %s 已经在线"):format(player:name()))
+        coromega:log_and_print(("player %s 已经在线"):format(player:name()))
     elseif action == "online" then
-        coromega:log(("player %s 新上线"):format(player:name()))
+        coromega:log_and_print(("player %s 新上线"):format(player:name()))
     elseif action == "offline" then
-        coromega:log(("player %s 下线"):format(player:name()))
+        coromega:log_and_print(("player %s 下线"):format(player:name()))
     end
 end)
 ```

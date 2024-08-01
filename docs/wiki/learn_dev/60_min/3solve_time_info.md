@@ -3,7 +3,7 @@
 好的，既然已经知道了要封禁的时间，也知道了要封禁谁，那么让我们开始封禁吧！让我们发出一条 kick 命令，把这个玩家踢出去：
 
 ```lua
-coromega:log(("封禁玩家 %s %s, 原因: %s"):format(player_name, ban_time, ban_reason))
+coromega:log_and_print(("封禁玩家 %s %s, 原因: %s"):format(player_name, ban_time, ban_reason))
 coromega:send_ws_cmd(("kick %s %s"):format(player_name,ban_reason),false)
 ```
 
@@ -91,7 +91,7 @@ coromega:when_called_by_terminal_menu({
             ban_reason = "未设定"
         end
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,  os.date("%Y-%m-%d %H:%M:%S", ban_until), ban_reason))
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,  os.date("%Y-%m-%d %H:%M:%S", ban_until), ban_reason))
     coromega:send_ws_cmd(("kick %s %s"):format(player_name,ban_reason))
 end)
 ```

@@ -48,7 +48,7 @@ coromega:when_receive_msg_from_command_block_named("#ban"):start_new(function(ch
         coromega:print("将封禁原因设置为：未设定")
         ban_reason = "未设定"
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
     player_banned_db:set(player_name, {
         ban_until = ban_until,

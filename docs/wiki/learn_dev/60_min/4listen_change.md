@@ -11,17 +11,17 @@
 ```lua
 coromega:when_player_change():start_new(function(player, action)
     -- if action == "exist" then
-    --     coromega:log(("player %s 已经在线"):format(player:name()))
+    --     coromega:log_and_print(("player %s 已经在线"):format(player:name()))
     -- elseif action == "online" then
-    --     coromega:log(("player %s 新上线"):format(player:name()))
+    --     coromega:log_and_print(("player %s 新上线"):format(player:name()))
     -- elseif action == "offline" then
-    --     coromega:log(("player %s 下线"):format(player:name()))
+    --     coromega:log_and_print(("player %s 下线"):format(player:name()))
     -- end
     if action=="offline" then
         return
     end
     local player_name=player:name()
-    -- coromega:log(("player %s 新上线"):format(player_name))
+    -- coromega:log_and_print(("player %s 新上线"):format(player_name))
     local ban_info=player_banned[player_name]
     if ban_info then
         local ban_until = ban_info.ban_until
@@ -49,7 +49,7 @@ coromega:when_called_by_terminal_menu({
 
     ...
 
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,  os.date("%Y-%m-%d %H:%M:%S", ban_until), ban_reason))
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,  os.date("%Y-%m-%d %H:%M:%S", ban_until), ban_reason))
     player_banned[player_name]={
         ban_until=ban_until,
         ban_reason=ban_reason,

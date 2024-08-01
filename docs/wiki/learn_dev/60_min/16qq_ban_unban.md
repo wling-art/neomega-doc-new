@@ -94,7 +94,7 @@ coromega:when_receive_filtered_cqhttp_message_from_default():start_new(function(
                 if not ban_reason then
                     ban_reason = "未设定"
                 end
-                coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,
+                coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(player_name,
                     unix_time_to_date_time_str(ban_until),
                     ban_reason))
                 coromega:send_cqhttp_message(source, ("封禁玩家：%s 到 %s, 原因：%s"):format(
@@ -133,7 +133,7 @@ coromega:when_receive_filtered_cqhttp_message_from_default():start_new(function(
                     coromega:send_cqhttp_message(source, ("玩家 %s 目前并未被封禁"):format(
                         player_name))
                 else
-                    coromega:log(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
+                    coromega:log_and_print(("解封玩家：%s (原封禁时间 %s, 原因：%s)"):format(player_name,
                         unix_time_to_date_time_str(ban_info.ban_until),
                         ban_info.ban_reason))
                     coromega:send_cqhttp_message(source,

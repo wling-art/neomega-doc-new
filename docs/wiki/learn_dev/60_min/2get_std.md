@@ -42,7 +42,7 @@ coromega:when_called_by_terminal_menu({
     local player_name=input[1]
     local ban_time=input[2]
     local ban_reason=input[3]
-    coromega:log(("封禁玩家 %s %s, 原因: %s"):format(player_name,ban_time,ban_reason))
+    coromega:log_and_print(("封禁玩家 %s %s, 原因: %s"):format(player_name,ban_time,ban_reason))
 end)
 ```
 
@@ -94,7 +94,7 @@ coromega:when_called_by_terminal_menu({
             ban_reason = "未设定"
         end
     end
-    coromega:log(("封禁玩家 %s %s, 原因: %s"):format(player_name, ban_time, ban_reason))
+    coromega:log_and_print(("封禁玩家 %s %s, 原因: %s"):format(player_name, ban_time, ban_reason))
 end)
 ```
 

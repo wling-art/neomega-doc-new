@@ -48,7 +48,7 @@ coromega:when_called_by_game_menu({
             ban_reason = "未设定"
         end
     end
-    coromega:log(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
+    coromega:log_and_print(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))
     caller:say(("封禁玩家：%s 到 %s, 原因：%s"):format(ban_player_name, unix_time_to_date_time_str(ban_until),
         ban_reason))

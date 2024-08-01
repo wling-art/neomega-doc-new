@@ -129,7 +129,7 @@ end)
 
 ### `call_other_plugin_api(api_name, args, timeout)`
 
-- **范围**: 任意
+- **范围**: 协程内
 - **说明**: 调用具有 `api_name` 的跨插件 API，调用参数为 `args`，并返回调用结果。
 - **参数**:
   - `api_name` (string)：跨插件 API 名。

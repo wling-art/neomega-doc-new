@@ -412,7 +412,7 @@ coromega:when_called_by_terminal_menu({
     -- 假设在 1036，102，1038 处有一个 nbt 方块，我们要先读出来
     local move_bot = true -- 机器人读取前自动移动到附近
     -- 读取这片区域 (只有1格)
-    local canvas = coromega:request_structure({ x = 1036, y = 102, z = 1038 }, { x = 1, y = 1, z = 1 }, true)
+    local canvas = coromega:request_structure({ x = 1036, y = 102, z = 1038 }, { x = 1, y = 1, z = 1 }, move_bot)
     -- 这片区域的起点是? -- {"x":1036,"y":102,"z":1038}
     coromega:print(canvas:get_start_pos())
     -- 这个方块是什么?

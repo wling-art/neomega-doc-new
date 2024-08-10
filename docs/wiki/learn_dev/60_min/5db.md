@@ -18,28 +18,22 @@ local player_banned_db=coromega:key_value_db("玩家封禁信息")
 
 符合直觉的，既然我们已经使用了数据库替代了 **player_banned** 这个变量，那么自然我们也应该在其他地方用数据库操作进行替代：
 
-```diff
-- player_banned[player_name]={
--     ban_until=ban_until,
--     ban_reason=ban_reason,
-- }
-
-+ player_banned_db:set(player_name,{
-+     ban_until=ban_until,
-+     ban_reason=ban_reason,
-+ })
+```lua
+player_banned[player_name]={ -- [!code --]
+player_banned_db:set(player_name,{ -- [!code ++]
+    ban_until=ban_until,
+    ban_reason=ban_reason,
+})
 ```
 
-```diff
-- local ban_info=player_banned[player_name]
-
-+ local ban_info=player_banned_db:get(player_name)
+```lua
+local ban_info=player_banned[player_name]  -- [!code --]
+local ban_info=player_banned_db:get(player_name) -- [!code ++]
 ```
 
-```diff
-- player_banned[player_name]=nil
-
-+ player_banned_db:delete(player_name)
+```lua
+player_banned[player_name]=nil  -- [!code --]
+player_banned_db:delete(player_name) -- [!code ++]
 ```
 
 现在，即使 neoemga 重启了，封禁信息依然有效，不是吗？

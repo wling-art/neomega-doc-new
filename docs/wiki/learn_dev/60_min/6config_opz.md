@@ -120,10 +120,9 @@ end
 
 然后
 
-```diff
-- coromega:send_ws_cmd(("kick %s %s"):format(player_name, ban_reason), false)
-
-+ coromega:send_ws_cmd(("kick %s %s"):format(player_name, ban_info_to_hint_str(ban_until,ban_reason)), false)
+```lua
+coromega:send_ws_cmd(("kick %s %s"):format(player_name, ban_reason), false) -- [!code --]
+coromega:send_ws_cmd(("kick %s %s"):format(player_name, ban_info_to_hint_str(ban_until,ban_reason)), false)-- [!code ++]
 ```
 
 好的，让我们输入 `reload` 使修改立刻生效，现在再试试，正常显示了吧？

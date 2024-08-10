@@ -29,40 +29,40 @@ end
 
 然后修改对应的部分：
 
-```diff
-- player_name = coromega:input("请输入要封禁的玩家名：")
-+ local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) coromega:print(info) end)
-+ player_name = resolver(coromega:input("请输入要封禁的玩家名, 或输入序号: "))
-+ if not player_name or player_name == "" then
-+     coromega:print("玩家名不能为空")
-+ end
+```lua
+player_name = coromega:input("请输入要封禁的玩家名：")  -- [!code --]
+local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) coromega:print(info) end) -- [!code ++:5]
+player_name = resolver(coromega:input("请输入要封禁的玩家名, 或输入序号: "))
+if not player_name or player_name == "" then
+    coromega:print("玩家名不能为空")
+end
 ```
 
-```diff
-- player_name = coromega:input("请输入要解封的玩家名: ")
-+ local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) coromega:print+ (info) end)
-+ player_name = resolver(coromega:input("请输入要解封的玩家名, 或输入序号: "))
-+ if not player_name or player_name == "" then
-+     coromega:print("玩家名不能为空")
-+ end
+```lua
+player_name = coromega:input("请输入要解封的玩家名: ")  -- [!code --]
+local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) coromega:print(info) end) -- [!code ++:5]
+player_name = resolver(coromega:input("请输入要解封的玩家名, 或输入序号: "))
+if not player_name or player_name == "" then
+    coromega:print("玩家名不能为空")
+end
 ```
 
-```diff
-- ban_player_name = caller:ask("请输入要封禁的玩家名：")
-+ local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) caller:say(info) end)
-+ ban_player_name = resolver(caller:ask("请输入要封禁的玩家名, 或输入序号: "))
-+ if not ban_player_name or ban_player_name == "" then
-+     caller:say("玩家名不能为空")
-+ end
+```lua
+ban_player_name = caller:ask("请输入要封禁的玩家名：")  -- [!code --]
+local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) caller:say(info) end) -- [!code ++:5]
+ban_player_name = resolver(caller:ask("请输入要封禁的玩家名, 或输入序号: "))
+if not ban_player_name or ban_player_name == "" then
+    caller:say("玩家名不能为空")
+end
 ```
 
-```diff
-- ban_player_name = caller:ask("请输入要解封的玩家名: ")
-+ local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) caller:say(info) end)
-+ ban_player_name = resolver(caller:ask("请输入要解封的玩家名, 或输入序号: "))
-+ if not ban_player_name or ban_player_name == "" then
-+     caller:say("玩家名不能为空")
-+ end
+```lua
+ban_player_name = caller:ask("请输入要解封的玩家名: ") -- [!code --]
+local resolver = display_candidates_and_get_selection_resolver_enclosure(function(info) caller:say(info) end) -- [!code ++:5]
+ban_player_name = resolver(caller:ask("请输入要解封的玩家名, 或输入序号: "))
+if not ban_player_name or ban_player_name == "" then
+    caller:say("玩家名不能为空")
+end
 ```
 
 输入 `reload` 然后观察变化，是不是挺好使的？

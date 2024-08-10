@@ -354,12 +354,16 @@ coromega:print(("运行结果：%s"):format(err or "成功"))
 - **参数**：
   - `block_pos` (table)：物品展示框位置，形如 `{x=-6,y=-60,z=-24}`
   - `slotID` (number)：快捷栏槽位号 (0~8)
+  - `rotation` (number): 旋转角度, 可采用的值有 0,1,2,3... 或者 0,45,90,135 等, 小于 45 的值会被 *45 处理
 - **返回值**：string 类型报错信息|nil
 - **示例**：
 
 ```lua
-local err = coromega:place_item_frame_item({x=-6, y=-60, z=-24}, 0)
-coromega:print(("运行结果：%s"):format(err or "成功"))
+  local item_frame_position = {x=-6, y=-60, z=-24}
+  local slot_id = 0
+  local rotation= 0 -- 1 或者 45 或者 2 或者 90, 小于 45 的值会被*45处理
+  local err = coromega:place_item_frame_item(item_frame_position, slot_id,rotation)
+  coromega:print(("运行结果：%s"):format(err or "成功"))
 ```
 
 ## 生成内容类型的容器

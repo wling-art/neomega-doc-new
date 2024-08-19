@@ -246,7 +246,7 @@ coromega:print(("运行结果：%s"):format(err or "成功"))
 
 ## 破坏方块并拾取掉落物
 
-### `break_and_pick_block(block_pos, recover_block, retry_times)`
+### `break_and_pick_block(block_pos, slot, recover_block, retry_times)`
 
 - **范围**：协程内
 - **说明**：机器人破坏指定坐标的方块并将掉落物品拾取到对应的快捷栏
@@ -354,7 +354,7 @@ coromega:print(("运行结果：%s"):format(err or "成功"))
 - **参数**：
   - `block_pos` (table)：物品展示框位置，形如 `{x=-6,y=-60,z=-24}`
   - `slotID` (number)：快捷栏槽位号 (0~8)
-  - `rotation` (number): 旋转角度, 可采用的值有 0,1,2,3... 或者 0,45,90,135 等, 小于 45 的值会被 *45 处理
+  - `rotation` (number): 旋转角度, 可采用的值有 0,1,2,3... 或者 0,45,90,135 等, 小于 45 的值会被 \*45 处理
 - **返回值**：string 类型报错信息|nil
 - **示例**：
 

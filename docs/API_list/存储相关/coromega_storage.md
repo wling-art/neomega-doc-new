@@ -73,6 +73,19 @@ coromega:data_path_of("小说文件夹", "雪国冒险奇谭.txt") -- ${storage}
 coromega:cache_path_of("test") -- ${storage}/cache/test
 ```
 
+## 获取插件自身的名字
+
+### `get_plugin_name()`
+
+- **范围**: 任意
+- **说明**: 获取插件自身的名字
+- **参数**: 无
+- **返回值**: 插件自身的名字（不带后缀），返回一个字符串
+
+```lua
+print(coromega:get_plugin_name())
+```
+
 ## 创建临时目录
 
 ### `make_temp_dir()`
@@ -276,7 +289,7 @@ local data = coromega:load_data(coromega:data_path_of("test.json"))
 # 数据库相关 API
 
 > 以下均为 `db` 对象的方法
-> 注意： `neomega` 使用的是键值对数据库，即 `key:value` 的形式，`key` 和 `value` 都是字符串。
+> 注意: `neomega` 使用的是键值对数据库，即 `key:value` 的形式，`key` 和 `value` 都是字符串。
 
 ## 打开或创建一个 键 - 值 数据库
 
@@ -285,7 +298,7 @@ local data = coromega:load_data(coromega:data_path_of("test.json"))
 - **范围**: 任意
 - **说明**: 根据 path 路径的数据库文件创建一个 `key_value_db` 对象<br>
   也就是 db 对象 如果不含有该文件 则自动创建 然后返回 db 对象
-  数据库类型可以为以下三种之一：
+  数据库类型可以为以下三种之一:
   1. "","text_log" 默认的实现
      折中的实现，不会因为意外关闭导致数据库完全损坏，而且也是以可读方式存在的
      手动修改数据库文件的时候需要先改 log 文件，log 文件内容必须遵循特定规则
@@ -300,8 +313,8 @@ local data = coromega:load_data(coromega:data_path_of("test.json"))
      好处是内容便于阅读和修改，只建议在开发和调试时使用
 - **参数**:
   - `path`: 数据库的路径
-  - `db_type`: 数据库类型：应该为 "","text_log","level","json" 之一或空 (等效于 "text_log")
-- **返回值**：返回一个 `key_value_db` 对象
+  - `db_type`: 数据库类型: 应该为 "","text_log","level","json" 之一或空 (等效于 "text_log")
+- **返回值**: 返回一个 `key_value_db` 对象
 
 **示例**:
 

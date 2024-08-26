@@ -68,3 +68,7 @@
     /* border-color: #f43f5e; */
     border-color: var(--vp-c-red-2);
 }
+
+.VPSocialLinks.VPNavBarSocialLinks.social-links {
+    margin-right: 0;
+}

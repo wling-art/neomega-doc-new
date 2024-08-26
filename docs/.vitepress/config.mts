@@ -1,7 +1,28 @@
 import { defineConfig } from "vitepress";
+import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 import pkg from "../../package.json";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        "@nolebase/ui",
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "@nolebase/vitepress-plugin-inline-link-preview",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading",
+      ],
+    },
+    ssr: {
+      noExternal: [
+        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
+        "@nolebase/ui",
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
+        "@nolebase/vitepress-plugin-inline-link-preview",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading",
+      ],
+    },
+  },
   lastUpdated: true,
   lang: "zh-CN",
   title: "NeOmega",
@@ -229,6 +250,10 @@ export default defineConfig({
     darkModeSwitchTitle: "切换到深色模式",
   },
   markdown: {
+    config(md) {
+      // 其他 markdown-it 配置...
+      md.use(InlineLinkPreviewElementTransform);
+    },
     lineNumbers: true,
     image: {
       // 图片懒加载

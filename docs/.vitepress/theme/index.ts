@@ -24,6 +24,7 @@ import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 
 import vitepressNprogress from "vitepress-plugin-nprogress";
 import "vitepress-plugin-nprogress/lib/css/index.css";
+import "@nolebase/vitepress-plugin-enhanced-mark/client/style.css";
 
 export default {
   extends: DefaultTheme,

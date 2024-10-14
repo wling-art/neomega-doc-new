@@ -1,24 +1,28 @@
 {
-  "name": "neomega_docs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": true,
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },
-  "license": "GPL-3.0",
-  "devDependencies": {
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.4.0",
-    "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.4.0",
-    "@nolebase/vitepress-plugin-inline-link-preview": "^2.4.0",
-    "vitepress": "1.2.2",
-    "vitepress-plugin-nprogress": "^0.0.4",
-    "vue": "^3.4.38"
-  },
-  "dependencies": {
-    "medium-zoom": "^1.1.0"
-  }
+    "name": "neomega_docs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs"
+    },
+    "license": "GPL-3.0",
+    "devDependencies": {
+        "@nolebase/markdown-it-unlazy-img": "^2.6.1",
+        "@nolebase/vitepress-plugin-enhanced-mark": "^2.6.1",
+        "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.6.1",
+        "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.6.1",
+        "@nolebase/vitepress-plugin-inline-link-preview": "^2.6.1",
+        "@nolebase/vitepress-plugin-page-properties": "^2.6.1",
+        "@nolebase/vitepress-plugin-thumbnail-hash": "^2.6.1",
+        "vitepress": "^1.4.1",
+        "vitepress-plugin-nprogress": "^0.0.4"
+    },
+    "dependencies": {
+        "medium-zoom": "^1.1.0",
+        "vue": "^3.5.11"
+    }
 }

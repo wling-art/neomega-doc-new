@@ -45,7 +45,9 @@ class Cursor {
 
         var el = document.getElementsByTagName("*");
         for (let i = 0; i < el.length; i++) {
-            if (getStyle(el[i], "cursor") == "pointer") this.pt.push(el[i].outerHTML);
+            if (getStyle(el[i], "cursor") == "pointer") {
+                this.pt.push(el[i].outerHTML);
+            }
         }
 
         // Create style element only once
@@ -74,7 +76,7 @@ class Cursor {
 
     init() {
         // Register event handlers only once
-        this.cursorFill=null
+        this.cursorFill = null
         document.onmousemove = (e) => {
             this.pos.curr == null && this.move(e.clientX - 8, e.clientY - 8);
             this.pos.curr = {

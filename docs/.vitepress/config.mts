@@ -1,32 +1,15 @@
 import { defineConfig } from "vitepress";
 import { InlineLinkPreviewElementTransform } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 import pkg from "../../package.json";
-import { ThumbnailHashImages } from "@nolebase/vitepress-plugin-thumbnail-hash/vite";
-import { PageProperties } from "@nolebase/vitepress-plugin-page-properties/vite";
 import { UnlazyImages } from "@nolebase/markdown-it-unlazy-img";
-// https://vitepress.dev/reference/site-config
+import { BiDirectionalLinks } from "@nolebase/markdown-it-bi-directional-links";
+
 export default defineConfig({
-  vite: {
-    plugins: [ThumbnailHashImages(), PageProperties()],
-    optimizeDeps: {
-      exclude: [
-        "@nolebase/vitepress-plugin-enhanced-readabilities",
-        "vitepress",
-        "@nolebase/ui",
-        "@nolebase/vitepress-plugin-inline-link-preview",
-        "@nolebase/vitepress-plugin-highlight-targeted-heading",
-        "@nolebase/vitepress-plugin-thumbnail-hash",
-      ],
-    },
-    ssr: {
-      noExternal: [
-        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
-        "@nolebase/vitepress-plugin-enhanced-readabilities",
-        "@nolebase/ui",
-        "@nolebase/vitepress-plugin-highlight-targeted-heading",
-        "@nolebase/vitepress-plugin-inline-link-preview",
-        "@nolebase/vitepress-plugin-thumbnail-hash",
-      ],
+  vue: {
+    template: {
+      transformAssetUrls: {
+        NolebaseUnlazyImg: ["src"],
+      },
     },
   },
   lastUpdated: true,
@@ -256,20 +239,14 @@ export default defineConfig({
     darkModeSwitchTitle: "切换到深色模式",
   },
   markdown: {
-    config(md) {
-      // 其他 markdown-it 配置...
-
+    config: (md) => {
       md.use(UnlazyImages(), {
         imgElementTag: "NolebaseUnlazyImg",
       });
-
+      md.use(BiDirectionalLinks());
       md.use(InlineLinkPreviewElementTransform);
     },
     lineNumbers: true,
-    image: {
-      // 图片懒加载
-      lazyLoading: true,
-    },
     container: {
       tipLabel: "提示",
       warningLabel: "警告",

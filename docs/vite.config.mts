@@ -25,7 +25,7 @@ export default defineConfig(async () => {
       PagePropertiesMarkdownSection(),
       GitChangelog({
         // 填写在此处填写您的仓库链接
-        repoURL: () => "https://github.com/whiTeLeaf-TL/U1_wiki",
+        repoURL: () => "https://github.com/wling-art/neomega-doc-new",
       }),
       GitChangelogMarkdownSection(),
       UnoCSS(),

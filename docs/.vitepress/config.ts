@@ -21,6 +21,16 @@ export default defineConfig({
   head: [
     ["link", { rel: "icon", href: "/logo.png" }],
     ["script", { async: "", src: "/m.js" }],
+    [
+      "script",
+      {
+        async: "",
+        defer: "true",
+        src: "https://umami.crashvibe.cn/script.js",
+        "data-domains": "neo.crashvibe.cn",
+        "data-website-id": "f305a06f-67c3-4568-af88-a1894faeb3f5",
+      },
+    ],
   ],
 
   sitemap: {

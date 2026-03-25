@@ -1,6 +1,6 @@
 # 📘 项目介绍
 
-本仓库主要用于存放 [NeOmega](https://github.com/OmineDev/neomega-core) 的文档，基于 [VitePress](https://vitepress.dev/) 实现，用于快速查询功能！
+本仓库主要用于存放 [NeOmega](https://github.com/OmineDev) 的文档，基于 [VitePress](https://vitepress.dev/) 实现，用于快速查询功能！
 
 # 🛠 项目构建
 

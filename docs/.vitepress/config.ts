@@ -21,7 +21,6 @@ export default defineConfig({
   head: [
     ["link", { rel: "icon", href: "/logo.png" }],
     ["script", { async: "", src: "/m.js" }],
-    ["script", { async: "true", src: "/cursor.js" }],
   ],
 
   sitemap: {

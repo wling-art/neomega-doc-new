@@ -34,7 +34,7 @@ export default defineConfig({
   ],
 
   sitemap: {
-    hostname: "https://neomega-wiki.tblstudio.cn",
+    hostname: "https://neo.crashvibe.cn",
   },
   themeConfig: {
     search: {
@@ -148,7 +148,7 @@ export default defineConfig({
           items: [
             {
               text: "命令收发",
-              link: "/API_list/命令收发api/coromega_cmd",
+              link: "/API_list/命令收发 api/coromega_cmd",
             },
             {
               text: "机器人",
@@ -160,15 +160,15 @@ export default defineConfig({
             },
             {
               text: "菜单",
-              link: "/API_list/菜单相关API/菜单相关API",
+              link: "/API_list/菜单相关 API/菜单相关 API",
             },
             {
               text: "数据包",
-              link: "/API_list/数据包监听相关API/数据包监听相关API",
+              link: "/API_list/数据包监听相关 API/数据包监听相关 API",
             },
             {
               text: "http",
-              link: "/API_list/http相关/http",
+              link: "/API_list/http 相关/http",
             },
             {
               text: "存储",
@@ -176,11 +176,11 @@ export default defineConfig({
             },
             {
               text: "cqhttp",
-              link: "/API_list/cqhttp相关API/cqhttp相关API",
+              link: "/API_list/cqhttp 相关 API/cqhttp 相关 API",
             },
             {
               text: "玩家与命令",
-              link: "/API_list/玩家交互与命令方块API/cmd_player",
+              link: "/API_list/玩家交互与命令方块 API/cmd_player",
             },
             {
               text: "建造",
@@ -197,15 +197,15 @@ export default defineConfig({
             },
             {
               text: "跨插件通信",
-              link: "/API_list/跨插件api调用/跨插件api调用",
+              link: "/API_list/跨插件 api 调用/跨插件 api 调用",
             },
             {
               text: "导入器",
-              link: "/API_list/导入器_strucure_canvas相关API/导入器_strucure_canvas相关API",
+              link: "/API_list/导入器_strucure_canvas 相关 API/导入器_strucure_canvas 相关 API",
             },
             {
               text: "读取配置",
-              link: "/API_list/配置读取和升级相关API/配置读取和升级",
+              link: "/API_list/配置读取和升级相关 API/配置读取和升级",
             },
             {
               text: "保护代码在分发时的安全性",
@@ -216,8 +216,8 @@ export default defineConfig({
               link: "/API_list/密码_哈希_base64/密码_哈希_base64",
             },
             {
-              text: "软API",
-              link: "/API_list/软API/软API",
+              text: "软 API",
+              link: "/API_list/软 API/软 API",
             },
             {
               text: "其他",

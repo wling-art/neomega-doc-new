@@ -12,12 +12,14 @@
       ```lua
       when_receive_packet_of_types(数据包类型 1, 数据包类型 2, 数据包类型 3, ...)
       ```
+
       - 示例：`when_receive_packet_of_types(packets.Text, packets.CommandOutput)`
       - 说明：接收所列出的数据包类型
     - **接收除指定类型外的所有数据包类型（反选）**:
       ```lua
       when_receive_packet_of_types(packets.all, no 数据包类型 1, no 数据包类型 2, no 数据包类型 3, ...)
       ```
+
       - 示例：`when_receive_packet_of_types(packets.all, packets.noMovePlayer)`
       - 说明：接收除 `noXX` 对应的 `XX` 类型数据包外的其余数据包类型（反选）
 - **返回值**: 监听器，监听器的处理函数的参数为数据包。数据包具有以下三个成员函数：

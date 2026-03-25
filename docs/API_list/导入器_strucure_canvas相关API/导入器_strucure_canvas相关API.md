@@ -119,12 +119,14 @@ local nbt = blocks.new_nbt()
 ## 建筑和画布操作
 
 - **`structures.convert_file_to_structure(structure_path, structure_file_path)`**: 实现了 AreaChunk 和 Structure 概念，将文件转换为结构
+
   ```lua
   local structures = omega.structures
   local source_structure = structures.convert_file_to_structure(source_structure_dir, source_structure_file)
   ```
 
 - **`structures.open_or_create_structure(path)`**: 打开或创建结构
+
   ```lua
   local structures = omega.structures
   local source_structure = structures.open_or_create_structure("some_dir")
@@ -175,16 +177,19 @@ local nbt = blocks.new_nbt()
 ### 获取和设置区域起点和终点
 
 - **`structure/canvas:get_start_pos()`**
+
   ```lua
   local start_pos = structure/canvas:get_start_pos()
   ```
 
 - **`structure/canvas:set_start_pos(pos)`**
+
   ```lua
   structure/canvas:set_start_pos(pos)
   ```
 
 - **`structure/canvas:get_end_pos()`**
+
   ```lua
   local end_pos = structure/canvas:get_end_pos()
   ```
@@ -197,6 +202,7 @@ local nbt = blocks.new_nbt()
 #### 检查和设置区域属性
 
 - **`structure/canvas:get_must_block_state()`**
+
   ```lua
   local must_block_state = structure/canvas:get_must_block_state()
   ```
@@ -219,6 +225,7 @@ local nbt = blocks.new_nbt()
 ### 对区域内所有方块应用读取函数
 
 - **`structure/canvas:apply_reader_to_blocks(start_pos, end_pos, reader_fn, option_ignore_air_block, option_ignore_nbt_block, option_ignore_normal_block)`**
+
   ```lua
   local function dump_region_snbt(start_pos, region_size)
       local move_bot = true
@@ -251,6 +258,7 @@ local nbt = blocks.new_nbt()
 ### 对区域内所有方块应用变换
 
 - **`structure/canvas:apply_alter_to_blocks(start_pos, end_pos, alter_fn, option_ignore_air_block, option_ignore_nbt_block, option_ignore_normal_block)`**
+
   ```lua
   local alter_start_pos = source_structure:get_start_pos()
   local alter_end_pos = source_structure:get_end_pos()

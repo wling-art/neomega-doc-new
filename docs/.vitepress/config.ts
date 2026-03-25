@@ -228,9 +228,7 @@ export default defineConfig({
       ],
     },
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/OmineDev" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/OmineDev" }],
     externalLinkIcon: true, // 展示站外链接箭头 ↗
     footer: {
       message: `基于 GPL-3.0 license 许可发布 | 文档版本 ${pkg.version}`,
